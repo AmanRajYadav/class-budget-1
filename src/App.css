@@ -1,38 +1,147 @@
-.App {
+/* App container */
+body {
+  background-color: #f8f9fa;
+}
+
+.container {
+  max-width: 1200px;
+}
+
+/* Card styles */
+.card {
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  margin-bottom: 20px;
+  border: none;
+}
+
+.card-title {
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+/* Student card specific styles */
+.student-card {
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.student-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+}
+
+/* Stats card styles */
+.stats-card {
+  background: linear-gradient(135deg, #ffffff 0%, #f5f7fa 100%);
+  margin-bottom: 30px;
+}
+
+.stat-column {
+  padding: 10px 15px;
+  border-right: 1px solid #eee;
+}
+
+.stat-column:last-child {
+  border-right: none;
+}
+
+.stat-title {
+  font-size: 0.9rem;
+  color: #6c757d;
+  margin-bottom: 5px;
+}
+
+.stat-value {
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.stat-subtitle {
+  font-size: 0.8rem;
+  color: #6c757d;
+}
+
+/* Progress bar */
+.progress {
+  height: 10px;
+  margin-top: 8px;
+  border-radius: 10px;
+}
+
+/* Button styles */
+.btn {
+  border-radius: 6px;
+  padding: 8px 16px;
+  font-weight: 500;
+}
+
+/* Modal styles */
+.modal-content {
+  border-radius: 12px;
+  border: none;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.modal-header {
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.modal-footer {
+  border-top: 1px solid #f0f0f0;
+}
+
+/* List item styles */
+.expense-item, .payment-item {
+  padding: 12px;
+  border-radius: 8px;
+  background-color: #f8f9fa;
+  margin-bottom: 10px;
+  transition: background-color 0.2s;
+}
+
+.expense-item:hover {
+  background-color: #fff0f0;
+}
+
+.payment-item:hover {
+  background-color: #f0fff0;
+}
+
+/* Summary stats in modal */
+.summary-stats {
+  background-color: #f8f9fa;
+  border-radius: 10px;
+  padding: 15px;
+  margin-bottom: 20px;
+}
+
+.stat-box {
+  flex: 1;
   text-align: center;
+  padding: 10px;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+/* Students grid */
+.students-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  gap: 20px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .students-grid {
+    grid-template-columns: 1fr;
   }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+  
+  .stat-column {
+    border-right: none;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 15px;
+    margin-bottom: 15px;
   }
-  to {
-    transform: rotate(360deg);
+  
+  .stat-column:last-child {
+    border-bottom: none;
   }
 }
